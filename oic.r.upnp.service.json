@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description" : "Copyright (c) 2016 Open Connectivity Foundation, Inc. All rights reserved.",
+  "id": "http://openinterconnect.org/iotdatamodels/schemas/oic.r.upnp.service.json#",
+  "title": "UPnP Service",
+  "definitions": {
+    "oic.r.upnp.service": {
+      "properties": {
+        "serviceType": {
+          "type": "string",
+          "description": "Required - ReadOnly, Specifies the type of the UPnP Service Type"
+        },
+        "serviceId": {
+          "type": "string",
+          "description": "Required - ReadOnly, Specifies the type of the UPnP Service ID"
+        },
+        "SCPDURL": {
+          "type": "string",
+          "description": "Required - ReadOnly, URL to service description"
+        },
+        "controlURL": {
+          "type": "string",
+          "description": "Required - ReadOnly, URL for control"
+        },
+        "eventSubURL": {
+          "type": "string",
+          "description": "Required - ReadOnly, URL for eventing"
+        },
+        "actionList": {
+          "type": "array",
+          "description": "Required - ReadOnly, Array of Actions",
+          "items": {
+            "oneOf": [
+              { "$ref": "oic.r.upnp.action.json#" }
+            ]
+          }
+        },
+        "serviceStateTable": {
+          "type": "array",
+          "description": "Required - ReadOnly, Array of State Variables",
+          "items": {
+            "oneOf": [
+              { "$ref": "oic.r.upnp.stateVariable.json#" }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    {"$ref": "oic.core.json#/definitions/oic.core"},
+    {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
+    {"$ref": "#/definitions/oic.r.upnp.service"}
+  ],
+  "required": ["serviceType","serviceId","SCPDURL","controlURL","eventSubURL"]
+}

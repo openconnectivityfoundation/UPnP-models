@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description" : "Copyright (c) 2016 Open Connectivity Foundation, Inc. All rights reserved.",
+  "id": "http://openinterconnect.org/iotdatamodels/schemas/oic.r.icon.json#",
+  "title": "Icon",
+  "definitions": {
+    "oic.r.icon": {
+      "properties": {
+        "icon": {
+          "type": "string",
+          "description": "Recommended - ReadOnly, Specifies the icon"
+        },
+        "mimeType": {
+          "type": "string",
+          "description": "Required - ReadOnly, Specifies the format of the MIME Type"
+        },
+        "width": {
+          "type": "integer",
+          "description": "Required - ReadOnly, Specifies the horizontal pixels"
+        },
+        "height": {
+          "type": "integer",
+          "description": "Required - ReadOnly, Specifies the vertical pixels"
+        },
+        "depth": {
+          "type": "integer",
+          "description": "Required - ReadOnly, Specifies the color depth"
+        },
+        "url": {
+          "type": "string",
+          "description": "Required - ReadOnly, Specifies the URL to icon"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    {"$ref": "oic.core.json#/definitions/oic.core"},
+    {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
+    {"$ref": "#/definitions/oic.r.icon"}
+  ],
+  "required": ["mimeType","width","height","depth","url"]
+}

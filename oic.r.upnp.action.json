@@ -1,0 +1,47 @@
+{
+  "id": "http://openinterconnect.org/iotdatamodels/schemas/oic.r.upnp.action.json#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description" : "Copyright (c) 2016 Open Connectivity Foundation, Inc. All rights reserved.",
+  "title": "UPnP Action",
+  "definitions": {
+    "oic.r.upnp.action": {
+      "action": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "actionName": {
+              "type": "string",
+              "description": "Action Name"
+            },
+			"inputArgs": {
+			  "type": "array",
+			  "description": "Optioinal - ReadOnly, Array of Input Arguements",
+			  "items": {
+				"oneOf": [
+				  { "$ref": "oic.r.generic.json#" }
+				]
+			  }
+			},
+            "outputArgs":  {
+			  "type": "array",
+			  "description": "Optioinal - ReadOnly, Array of Output Arguements",
+			  "items": {
+				"oneOf": [
+				  { "$ref": "oic.r.generic.json#" }
+				]
+			  }
+            }
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    {"$ref": "oic.core.json#/definitions/oic.core"},
+    {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
+    {"$ref": "#/definitions/oic.r.upnp.action"}
+  ],
+  "required": ["actionName"]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "http://openinterconnect.org/iotdatamodels/schemas/oic.r.upnp.stateVariable.json#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description" : "Copyright (c) 2016 Open Connectivity Foundation, Inc. All rights reserved.",
+  "title": "UPnP State Variable",
+  "definitions": {
+    "oic.r.upnp.stateVariable": {
+      "stateVariable": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Required - ReadOnly, State Variable Name"
+            },
+            "dataType": {
+              "type": "string",
+              "description": "Required - ReadOnly, State Variable Data Type"
+            },
+            "defaultValue": {
+              "type": "string",
+              "description": "Recommended - ReadOnly, State Variable Default Value"
+            },
+            "allowedValueList": {
+              "type": "array",
+              "description": "Recommended - ReadOnly, Array of State Variable Allowed Value",
+              "items": {
+                "allowedValue": "string",
+                "description": "Required - ReadOnly, State Variable Allowed Value"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    {"$ref": "oic.core.json#/definitions/oic.core"},
+    {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
+    {"$ref": "#/definitions/oic.r.upnp.stateVariable"}
+  ],
+  "required": ["name", "dataType"]
+}

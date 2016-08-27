@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description" : "Copyright (c) 2016 Open Connectivity Foundation, Inc. All rights reserved.",
+  "id": "http://openinterconnect.org/iotdatamodels/schemas/oic.r.upnp.device.json#",
+  "title": "UPnP Device",
+  "definitions": {
+    "oic.r.upnp.device": {
+      "properties": {
+        "deviceType": {
+          "type": "string",
+          "description": "Required - ReadOnly, Specifies the type of the UPnP Device Type"
+        },
+        "friendlyName": {
+          "type": "string",
+          "description": "Required - ReadOnly, Short user-friendly name"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Required - ReadOnly, Manufacturer name"
+        },
+        "manufacturerURL": {
+          "type": "string",
+          "description": "Allowed - ReadOnly, URL-Website to manufacturer of the device"
+        },
+        "modelDescription": {
+          "type": "string",
+          "description": "Recommended - ReadOnly, Long user-friendly title of the device"
+        },
+        "modelName": {
+          "type": "string",
+          "description": "Required - ReadOnly, Model name"
+        },
+        "modelNumber": {
+          "type": "string",
+          "description": "Recommended - ReadOnly, Model number"
+        },
+        "modelURL": {
+          "type": "string",
+          "description": "Allowed - ReadOnly, URL to model site"
+        },
+        "serialNumber": {
+          "type": "string",
+          "description": "Recommended - ReadOnly, Manufacturer's serial number"
+        },
+        "UDN": {
+          "type": "string",
+          "description": "Required - ReadOnly, uuid:UUID - Universally Unique IDentifier"
+        },
+        "UPC": {
+          "type": "string",
+          "description": "Allowed - ReadOnly, Universal Product Code"
+        },
+        "iconList": {
+          "type": "array",
+          "description": "Required - ReadOnly, Array of Icons",
+          "items": {
+            "oneOf": [
+              { "$ref": "oic.r.icon.json#" }
+            ]
+          }
+        },
+        "serviceList": {
+          "type": "array",
+          "description": "Allowed - ReadOnly, Array of Services",
+          "items": {
+            "oneOf": [
+              { "$ref": "oic.r.upnp.service.json#" }
+            ]
+          }
+        }
+    }
+  }
+},
+  "type": "object",
+  "allOf": [
+    {"$ref": "oic.core.json#/definitions/oic.core"},
+    {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
+    {"$ref": "#/definitions/oic.r.upnp.device"}
+  ],
+  "required": ["deviceType","friendlyName","manufacturer","modelName","UDN"]
+}
