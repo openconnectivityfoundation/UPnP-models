@@ -8,27 +8,32 @@
       "properties": {
         "serviceType": {
           "type": "string",
-          "description": "Required - ReadOnly, Specifies the type of the UPnP Service Type"
+          "readOnly": true,
+          "description": "Specifies the type of the UPnP Service Type"
         },
         "serviceId": {
           "type": "string",
-          "description": "Required - ReadOnly, Specifies the type of the UPnP Service ID"
+          "readOnly": true,
+          "description": "Specifies the type of the UPnP Service ID"
         },
         "SCPDURL": {
           "type": "string",
-          "description": "Required - ReadOnly, URL to service description"
+          "readOnly": true,
+          "description": "Specifies the URL to service description"
         },
         "controlURL": {
           "type": "string",
-          "description": "Required - ReadOnly, URL for control"
+          "readOnly": true,
+          "description": "Specifies the URL for control"
         },
         "eventSubURL": {
           "type": "string",
-          "description": "Required - ReadOnly, URL for eventing"
+          "description": "Specifies the URL for eventing"
         },
         "actionList": {
           "type": "array",
-          "description": "Required - ReadOnly, Array of Actions",
+          "readOnly": true,
+          "description": "Required, Array of Actions",
           "items": {
             "oneOf": [
               { "$ref": "oic.r.upnp.action.json#" }
@@ -37,7 +42,8 @@
         },
         "serviceStateTable": {
           "type": "array",
-          "description": "Required - ReadOnly, Array of State Variables",
+          "readOnly": true,
+          "description": "Required, Array of State Variables",
           "items": {
             "oneOf": [
               { "$ref": "oic.r.upnp.stateVariable.json#" }

@@ -12,11 +12,13 @@
           "properties": {
             "actionName": {
               "type": "string",
-              "description": "Action Name"
+              "readOnly": true,
+              "description": "Specifies the Action Name"
             },
 			"inputArgs": {
 			  "type": "array",
-			  "description": "Optioinal - ReadOnly, Array of Input Arguements",
+        "readOnly": true,
+			  "description": "Optioinal, Specifies the Array of Input Arguements",
 			  "items": {
 				"oneOf": [
 				  { "$ref": "oic.r.generic.json#" }
@@ -25,7 +27,8 @@
 			},
             "outputArgs":  {
 			  "type": "array",
-			  "description": "Optioinal - ReadOnly, Array of Output Arguements",
+        "readOnly": true,
+			  "description": "Optioinal, Specifies the Array of Output Arguements",
 			  "items": {
 				"oneOf": [
 				  { "$ref": "oic.r.generic.json#" }

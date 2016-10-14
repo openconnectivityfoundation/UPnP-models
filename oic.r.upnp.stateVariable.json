@@ -12,22 +12,27 @@
           "properties": {
             "name": {
               "type": "string",
-              "description": "Required - ReadOnly, State Variable Name"
+              "readOnly": true,
+              "description": "Specifies the State Variable Name"
             },
             "dataType": {
               "type": "string",
-              "description": "Required - ReadOnly, State Variable Data Type"
+              "readOnly": true,
+              "description": "Specifies the State Variable Data Type"
             },
             "defaultValue": {
               "type": "string",
-              "description": "Recommended - ReadOnly, State Variable Default Value"
+              "readOnly": true,
+              "description": "Recommended, State Variable Default Value"
             },
             "allowedValueList": {
               "type": "array",
-              "description": "Recommended - ReadOnly, Array of State Variable Allowed Value",
+              "readOnly": true,
+              "description": "Recommended, Array of State Variable Allowed Value",
               "items": {
                 "allowedValue": "string",
-                "description": "Required - ReadOnly, State Variable Allowed Value"
+                "readOnly": true,
+                "description": "Required, State Variable Allowed Value"
               }
             }
           }

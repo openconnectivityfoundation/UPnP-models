@@ -8,47 +8,58 @@
       "properties": {
         "deviceType": {
           "type": "string",
-          "description": "Required - ReadOnly, Specifies the type of the UPnP Device Type"
+          "readOnly": true,
+          "description": "Specifies the type of the UPnP Device Type"
         },
         "friendlyName": {
           "type": "string",
-          "description": "Required - ReadOnly, Short user-friendly name"
+          "readOnly": true,
+          "description": "Specifies the Short user-friendly name"
         },
         "manufacturer": {
           "type": "string",
-          "description": "Required - ReadOnly, Manufacturer name"
+          "readOnly": true,
+          "description": "Specifies the Manufacturer name"
         },
         "manufacturerURL": {
           "type": "string",
-          "description": "Allowed - ReadOnly, URL-Website to manufacturer of the device"
+          "readOnly": true,
+          "description": "Allowed, Specifies the URL-Website to manufacturer of the device"
         },
         "modelDescription": {
           "type": "string",
-          "description": "Recommended - ReadOnly, Long user-friendly title of the device"
+          "readOnly": true,
+          "description": "Recommended, Specifies the Long user-friendly title of the device"
         },
         "modelName": {
           "type": "string",
-          "description": "Required - ReadOnly, Model name"
+          "readOnly": true,
+          "description": "Specifies the Model name"
         },
         "modelNumber": {
           "type": "string",
-          "description": "Recommended - ReadOnly, Model number"
+          "readOnly": true,
+          "description": "Recommended, Specifies the Model number"
         },
         "modelURL": {
           "type": "string",
-          "description": "Allowed - ReadOnly, URL to model site"
+          "readOnly": true,
+          "description": "Allowed, Specifies the URL to model site"
         },
         "serialNumber": {
           "type": "string",
-          "description": "Recommended - ReadOnly, Manufacturer's serial number"
+          "readOnly": true,
+          "description": "Recommended, Specifies the Manufacturer's serial number"
         },
         "UDN": {
           "type": "string",
-          "description": "Required - ReadOnly, uuid:UUID - Universally Unique IDentifier"
+          "readOnly": true,
+          "description": "Specifies the uuid:UUID - Universally Unique IDentifier"
         },
         "UPC": {
           "type": "string",
-          "description": "Allowed - ReadOnly, Universal Product Code"
+          "readOnly": true,
+          "description": "Allowed, Specifies the Universal Product Code"
         },
         "iconList": {
           "type": "array",

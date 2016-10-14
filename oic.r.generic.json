@@ -8,15 +8,18 @@
       "properties": {
         "genName": {
           "type": "string",
-          "description": "Required - ReadOnly, Generic Name"
+          "readOnly": true,
+          "description": "Generic Name"
         },
         "genType": {
           "type": "string",
-          "description": "Required - ReadOnly, Generic Type"
+          "readOnly": true,
+          "description": "Generic Type"
         },
         "genValue": {
           "type": "string",
-          "description": "Required - ReadOnly, Generic Value"
+          "readOnly": true,
+          "description": "Generic Value"
         }
       }
     }
