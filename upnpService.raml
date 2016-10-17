@@ -37,19 +37,29 @@ traits:
             schema: upnpService
             example: |
               {
-                "rt": ["oic.r.upnp.service"],
-                "id": "unique_example_id",
-                "serviceType": "service_type",
-                "serviceId": "service_id",
-                "SCPDURL": "scpd_url_string",
-                "controlURL": "control_url_string",
-                "eventSubURL": "event_sub_url_string",
-                "actionList": [
-                  {
-                    "actionName": "action_name_1st"
-                  },
-                  {
-                    "actionName": "action_name_nth"
-                  }
-                ]
+              "rt": ["oic.r.upnp.service"],
+              "id": "unique_example_id",
+              "serviceType": "service_type",
+              "serviceId": "service_id",
+              "SCPDURL": "scpd_url_string",
+              "controlURL": "control_url_string",
+              "eventSubURL": "event_sub_url_string",
+              "actionList": [
+              {
+              "actionName": "action_name_1st"
+              },
+              {
+              "actionName": "action_name_nth"
+              }
+              ],
+              "serviceStateTable": [
+              {
+              "name": "name_1st",
+              "dataType": "dataType_1st"
+              },
+              {
+              "name": "name_nth",
+              "dataType": "dataType_nth"
+              }
+              ]
               }

@@ -17,18 +17,18 @@
             },
 			"inputArgs": {
 			  "type": "array",
-        "readOnly": true,
 			  "description": "Optioinal, Specifies the Array of Input Arguements",
+        "readOnly": true,
 			  "items": {
 				"oneOf": [
 				  { "$ref": "oic.r.generic.json#" }
 				]
 			  }
 			},
-            "outputArgs":  {
+			"outputArgs":  {
 			  "type": "array",
-        "readOnly": true,
 			  "description": "Optioinal, Specifies the Array of Output Arguements",
+        "readOnly": true,
 			  "items": {
 				"oneOf": [
 				  { "$ref": "oic.r.generic.json#" }

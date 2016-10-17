@@ -32,8 +32,8 @@
         },
         "actionList": {
           "type": "array",
+          "description": "Specifies the Array of Actions",
           "readOnly": true,
-          "description": "Required, Array of Actions",
           "items": {
             "oneOf": [
               { "$ref": "oic.r.upnp.action.json#" }
@@ -42,8 +42,8 @@
         },
         "serviceStateTable": {
           "type": "array",
+          "description": "Specifies the Array of State Variables",
           "readOnly": true,
-          "description": "Required, Array of State Variables",
           "items": {
             "oneOf": [
               { "$ref": "oic.r.upnp.stateVariable.json#" }
@@ -59,5 +59,5 @@
     {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
     {"$ref": "#/definitions/oic.r.upnp.service"}
   ],
-  "required": ["serviceType","serviceId","SCPDURL","controlURL","eventSubURL"]
+  "required": ["serviceType","serviceId","SCPDURL","controlURL","eventSubURL","actionList","serviceStateTable"]
 }

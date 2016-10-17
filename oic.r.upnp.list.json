@@ -8,8 +8,8 @@
       "properties": {
         "upnpDeviceList": {
           "type": "array",
+          "description": "Specifies the Array of UPnP Devices",
           "readOnly": true,
-          "description": "Required, Array of UPnP Devices",
           "items": {
             "oneOf": [
               { "$ref": "oic.r.upnp.device.json#" }

@@ -16,7 +16,7 @@
           "readOnly": true,
           "description": "Specifies the width x height pixels"
         },
-        "url": {
+        "media": {
           "type": "string",
           "readOnly": true,
           "description": "Specifies the media URL to icon"
@@ -30,5 +30,5 @@
     {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
     {"$ref": "#/definitions/oic.r.icon"}
   ],
-  "required": ["mimeType","sizes","url"]
+  "required": ["mimeType","sizes","media"]
 }

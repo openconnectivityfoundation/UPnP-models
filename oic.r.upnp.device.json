@@ -63,7 +63,8 @@
         },
         "iconList": {
           "type": "array",
-          "description": "Required - ReadOnly, Array of Icons",
+          "description": "Specifies the Array of Icons",
+          "readOnly": true,
           "items": {
             "oneOf": [
               { "$ref": "oic.r.icon.json#" }
@@ -72,7 +73,8 @@
         },
         "serviceList": {
           "type": "array",
-          "description": "Allowed - ReadOnly, Array of Services",
+          "description": "Specifies the Array of Services",
+          "readOnly": true,
           "items": {
             "oneOf": [
               { "$ref": "oic.r.upnp.service.json#" }
@@ -88,5 +90,5 @@
     {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
     {"$ref": "#/definitions/oic.r.upnp.device"}
   ],
-  "required": ["deviceType","friendlyName","manufacturer","modelName","UDN"]
+  "required": ["deviceType","friendlyName","manufacturer","modelName","UDN","iconList","serviceList"]
 }
