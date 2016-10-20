@@ -5,7 +5,7 @@
   "title": "UPnP State Variable",
   "definitions": {
     "oic.r.upnp.stateVariable": {
-      "stateVariable": {
+      "stateVariables": {
         "type": "array",
         "items": {
           "type": "object",
