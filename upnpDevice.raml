@@ -38,7 +38,7 @@ traits:
             example: |
               {
                 "rt": ["oic.r.upnp.device"],
-                "id": "unique_example_id",
+                "id": "/oic/upnp/device/uuid:UUID",
                 "deviceType": "device_type",
                 "friendlyName": "friendly_name",
                 "manufacturer": "manufacturer_name",
@@ -50,67 +50,103 @@ traits:
                 "UDN": "uuid:UUID",
                 "UPC": "Universal_Product_Code",
                 "iconList": [
-                {
-                "mimeType": "1st_mimeType_string",
-                "sizes": "1st_sizes_string",
-                "media": "1st_media_string"
-                },
-                {
-                "mimeType": "nth_mimeType_string",
-                "sizes": "nth_sizes_string",
-                "media": "nth_media_string"
-                }
+                  {
+                    "mimeType": "1st_mimeType_string",
+                    "sizes": "1st_sizes_string",
+                    "media": "1st_media_string"
+                  },
+                  {
+                    "mimeType": "nth_mimeType_string",
+                    "sizes": "nth_sizes_string",
+                    "media": "nth_media_string"
+                  }
                 ],
                 "serviceList": [
-                {
-                "serviceType": "1st_serviceType",
-                "serviceId": "1st_serviceId",
-                "SCPDURL": "1st_SCPDURL",
-                "controlURL": "1st_controlURL",
-                "eventSubURL": "1st_eventSubURL",
-                "actionList": [
-                {
-                "actionName": "1st_action_name_1st"
-                },
-                {
-                "actionName": "1st_action_name_nth"
-                }
-                ],
-                "serviceStateTables": [
-                {
-                "name": "1st_name_1st",
-                "dataType": "1st_dataType_1st"
-                },
-                {
-                "name": "1st_name_nth",
-                "dataType": "1st_dataType_nth"
-                }
-                ]
-                },
-                {
-                "serviceType": "nth_serviceType",
-                "serviceId": "nth_serviceId",
-                "SCPDURL": "nth_SCPDURL",
-                "controlURL": "nth_controlURL",
-                "eventSubURL": "nth_eventSubURL",
-                "actionList": [
-                {
-                "actionName": "nth_action_name_1st"
-                },
-                {
-                "actionName": "nth_action_name_nth"
-                }
-                ],
-                "serviceStateTables": [
-                {
-                "name": "nth_name_1st",
-                "dataType": "nth_dataType_1st"
-                },
-                {
-                "name": "nth_name_nth",
-                "dataType": "nth_dataType_nth"
-                }
-                ]
-                }
+                  {
+                    "serviceType": "1st_serviceType",
+                    "serviceId": "1st_serviceId",
+                    "SCPDURL": "1st_SCPDURL",
+                    "controlURL": "1st_controlURL",
+                    "eventSubURL": "1st_eventSubURL",
+                    "actionList": [
+                      {
+                        "actionName": "1st_action_name_1st"
+                      },
+                      {
+                        "actionName": "1st_action_name_nth"
+                      }
+                    ],
+                    "serviceStateTables": [
+                      {
+                        "name": "1st_name_1st",
+                        "dataType": "1st_dataType_1st",
+                        "defaultValue": "1st_defaultValue_1st",
+                        "allowedValueList": [
+                          {
+                            "allowedValue": "1st_allowedValue_1st"
+                          },
+                          {
+                            "allowedValue": "1st_allowedValue_nth"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "1st_name_nth",
+                        "dataType": "1st_dataType_nth",
+                        "defaultValue": "1st_defaultValue_nth",
+                        "allowedValueList": [
+                          {
+                            "allowedValue": "nth_allowedValue_1st"
+                          },
+                          {
+                            "allowedValue": "nth_allowedValue_nth"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "serviceType": "nth_serviceType",
+                    "serviceId": "nth_serviceId",
+                    "SCPDURL": "nth_SCPDURL",
+                    "controlURL": "nth_controlURL",
+                    "eventSubURL": "nth_eventSubURL",
+                    "actionList": [
+                      {
+                        "actionName": "nth_action_name_1st"
+                      },
+                      {
+                        "actionName": "nth_action_name_nth"
+                      }
+                    ],
+                    "serviceStateTables": [
+                      {
+                        "name": "nth_name_1st",
+                        "dataType": "nth_dataType_1st",
+                        "defaultValue": "nth_defaultValue_1st",
+                        "allowedValueList": [
+                          {
+                            "allowedValue": "nth_allowedValue_1st"
+                          },
+                          {
+                            "allowedValue": "nth_allowedValue_nth"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "nth_name_nth",
+                        "dataType": "nth_dataType_nth",
+                        "defaultValue": "nth_defaultValue_1st",
+                        "allowedValueList": [
+                          {
+                            "allowedValue": "nth_allowedValue_1st"
+                          },
+                          {
+                            "allowedValue": "nth_allowedValue_nth"
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 ]
               }

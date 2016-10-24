@@ -37,29 +37,47 @@ traits:
             schema: upnpService
             example: |
               {
-              "rt": ["oic.r.upnp.service"],
-              "id": "unique_example_id",
-              "serviceType": "service_type",
-              "serviceId": "service_id",
-              "SCPDURL": "scpd_url_string",
-              "controlURL": "control_url_string",
-              "eventSubURL": "event_sub_url_string",
-              "actionList": [
-              {
-              "actionName": "action_name_1st"
-              },
-              {
-              "actionName": "action_name_nth"
-              }
-              ],
-              "serviceStateTables": [
-              {
-              "name": "name_1st",
-              "dataType": "dataType_1st"
-              },
-              {
-              "name": "name_nth",
-              "dataType": "dataType_nth"
-              }
-              ]
-              }
+                "rt": ["oic.r.upnp.service"],
+                "id": "/oic/upnp/service/uuid:UUID",
+                "serviceType": "service_type",
+                "serviceId": "service_id",
+                "SCPDURL": "scpd_url_string",
+                "controlURL": "control_url_string",
+                "eventSubURL": "event_sub_url_string",
+                "actionList": [
+                  {
+                    "actionName": "action_name_1st"
+                  },
+                  {
+                    "actionName": "action_name_nth"
+                  }
+                ],
+                "serviceStateTables": [
+                  {
+                    "name": "name_1st",
+                    "dataType": "dataType_1st",
+                    "defaultValue": "defaultValue_1st",
+                    "allowedValueList": [
+                      {
+                        "allowedValue": "1st_allowedValue_1st"
+                      },
+                      {
+                        "allowedValue": "1st_allowedValue_nth"
+                      }
+                      ]
+                    },
+                    {
+                      "name": "name_nth",
+                      "dataType": "dataType_nth",
+                      "defaultValue": "defaultValue_nth",
+                      "allowedValueList": [
+                        {
+                          "allowedValue": "nth_allowedValue_1st"
+                        },
+                        {
+                          "allowedValue": "nth_allowedValue_nth"
+                        }
+                      ]
+                    }
+                  ]
+                }
