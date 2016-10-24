@@ -1,0 +1,163 @@
+#%RAML 0.8
+title: UPnP Media Server Device
+version: v1.1.0-20160519
+documentation:
+  - title: © 2016 Open Connectivity Foundation, Inc. All rights reserved.
+    content: |
+        Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+        1.  Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        2.  Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+        THIS SOFTWARE IS PROVIDED BY THE Open Connectivity Foundation, INC. "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE OR WARRANTIES OF NON-INFRINGEMENT, ARE DISCLAIMED. IN NO EVENT SHALL THE Open Connectivity Foundation, INC. OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+schemas:
+  - upnpDevice: !include oic.r.upnp.device.json
+
+traits:
+  - interface:
+      queryParameters:
+        if:
+          enum: ["oic.if.a","oic.if.baseline"]
+
+/upnpDeviceResURI:
+  description: |
+    This resource provides the list of UPnP Device available on the device.
+    The devices are an array of upnpDevice(s) as separately defined.
+    The basic resource type oic.r.deviceList is not able provide the serviceList and iconlist which are provide here in this device.
+
+  displayName: UPnP Device
+  is: [ interface ]
+
+  get:
+    description: |
+      Retrieves the current upnp device.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: upnpDevice
+            example: |
+              {
+                "rt": ["oic.r.upnp.device"],
+                "id": "unique_example_id",
+                "deviceType": "urn:schemas-upnp-org:device:MediaServer:1",
+                "friendlyName": "Rick Awox",
+                "manufacturer": "AwoX",
+                "manufacturerURL": "http://www.awox.com",
+                "modelDescription": "Awox Media Server 2.1",
+                "modelName": "StriimService",
+                "modelNumber": "2.1",
+                "modelURL": "http://www.awox.com",
+                "serialNumber": "0000001",
+                "UDN": "uuid:6ccbfaf4-bfde-11d3-8741-b75a17d4c611",
+                "UPC": "000000000000",
+                "iconList": [
+                  {
+                    "mimeType": "image/jpeg",
+                    "sizes": "48x48",
+                    "media": "/web/file/smallIco.jpg"
+                  },
+                  {
+                    "mimeType": "image/jpeg",
+                    "sizes": "120x120",
+                    "media": "/web/file/largeIco.jpg"
+                  },
+                  {
+                    "mimeType": "image/png",
+                    "sizes": "48x48",
+                    "media": "/web/file/smallIco.png"
+                  },
+                  {
+                    "mimeType": "image/png",
+                    "sizes": "120x120",
+                    "media": "/web/file/largeIco.png"
+                  }
+                ],
+                "serviceList": [
+                  {
+                    "serviceType": "urn:schemas-upnp-org:service:ConnectionManager:1",
+                    "serviceId": "urn:upnp-org:serviceId:ConnectionManager",
+                    "SCPDURL": "/aw/MediaServer_ConnectionManager/scpd.xml",
+                    "controlURL": "/aw/MediaServer_ConnectionManager/control",
+                    "eventSubURL": "/aw/MediaServer_ConnectionManager/event",
+                    "actionList": [
+                      {
+                        "actionName": "1st_action_name_1st"
+                      },
+                      {
+                        "actionName": "1st_action_name_nth"
+                      }
+                    ],
+                    "serviceStateTables": [
+                      {
+                        "name": "1st_name_1st",
+                        "dataType": "1st_dataType_1st",
+                        "defaultValue": "1st_defaultValue_1st",
+                        "allowedValueList": [
+                          {
+                            "allowedValue": "1st_allowedValue_1st"
+                          },
+                          {
+                            "allowedValue": "1st_allowedValue_nth"
+                          }
+                          ]
+                      },
+                      {
+                        "name": "1st_name_nth",
+                        "dataType": "1st_dataType_nth",
+                        "defaultValue": "1st_defaultValue_nth",
+                        "allowedValueList": [
+                          {
+                            "allowedValue": "1st_allowedValue_1st"
+                          },
+                          {
+                            "allowedValue": "1st_allowedValue_nth"
+                          }
+                          ]
+                      }
+                    ]
+                  },
+                  {
+                    "serviceType": "urn:schemas-upnp-org:service:ContentDirectory:1",
+                    "serviceId": "urn:upnp-org:serviceId:ContentDirectory",
+                    "SCPDURL": "/aw/MediaServer_ContentDirectory/scpd.xml",
+                    "controlURL": "/aw/MediaServer_ContentDirectory/control",
+                    "eventSubURL": "/aw/MediaServer_ContentDirectory/event",
+                    "actionList": [
+                      {
+                        "actionName": "nth_action_name_1st"
+                      },
+                      {
+                        "actionName": "nth_action_name_nth"
+                      }
+                    ],
+                    "serviceStateTables": [
+                      {
+                        "name": "nth_name_1st",
+                        "dataType": "nth_dataType_1st",
+                        "defaultValue": "nth_defaultValue_1st",
+                        "allowedValueList": [
+                          {
+                            "allowedValue": "nth_allowedValue_1st"
+                          },
+                          {
+                            "allowedValue": "nth_allowedValue_nth"
+                          }
+                        ]
+                      },
+                      {
+                        "name": "nth_name_nth",
+                        "dataType": "nth_dataType_nth",
+                        "defaultValue": "nth_defaultValue_1st",
+                        "allowedValueList": [
+                          {
+                            "allowedValue": "nth_allowedValue_1st"
+                          },
+                          {
+                            "allowedValue": "nth_allowedValue_nth"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }

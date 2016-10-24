@@ -1,0 +1,79 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<root xmlns="urn:schemas-upnp-org:device-1-0" xmlns:ms="urn:microsoft-com:wmc-1-0" xmlns:dlna="urn:schemas-dlna-org:device-1-0">
+<specVersion>
+<major>1</major>
+<minor>0</minor>
+</specVersion>
+<device ms:X_MS_SupportsWMDRM="false">
+<deviceType>urn:schemas-upnp-org:device:MediaServer:1</deviceType>
+<dlna:X_DLNADOC xmlns:dlna="urn:schemas-dlna-org:device-1-0">DMS-1.50</dlna:X_DLNADOC>
+<pnpx:X_compatibleId xmlns:pnpx="http://schemas.microsoft.com/windows/pnpx/2005/11">MS_DigitalMediaDeviceClass_DMS_V001</pnpx:X_compatibleId>
+<pnpx:X_deviceCategory xmlns:pnpx="http://schemas.microsoft.com/windows/pnpx/2005/11">MediaDevices</pnpx:X_deviceCategory>
+<microsoft:X_magicPacketWakeSupported xmlns:microsoft="urn:schemas-microsoft:WMPNSS-1-0">0</microsoft:X_magicPacketWakeSupported>
+<microsoft:X_magicPacketSendSupported xmlns:microsoft="urn:schemas-microsoft:WMPNSS-1-0">0</microsoft:X_magicPacketSendSupported>
+<friendlyName>Rick Awox</friendlyName>
+<manufacturer>Awox</manufacturer>
+<manufacturerURL>http://www.awox.com</manufacturerURL>
+<modelDescription>Awox Media Server 2.1</modelDescription>
+<modelName>StriimService</modelName>
+<modelNumber>2.1</modelNumber>
+<modelURL>http://www.awox.com</modelURL>
+<serialNumber>0000001</serialNumber>
+<UDN>uuid:6ccbfaf4-bfde-11d3-8741-b75a17d4c611</UDN>
+<UPC>000000000000</UPC>
+<presentationURL>/web</presentationURL>
+<iconList>
+<icon>
+<mimetype>image/jpeg</mimetype>
+<width>48</width>
+<height>48</height>
+<depth>24</depth>
+<url>/web/file/smallIco.jpg</url>
+</icon>
+<icon>
+<mimetype>image/jpeg</mimetype>
+<width>120</width>
+<height>120</height>
+<depth>24</depth>
+<url>/web/file/largeIco.jpg</url>
+</icon>
+<icon>
+<mimetype>image/png</mimetype>
+<width>48</width>
+<height>48</height>
+<depth>24</depth>
+<url>/web/file/smallIco.png</url>
+</icon>
+<icon>
+<mimetype>image/png</mimetype>
+<width>120</width>
+<height>120</height>
+<depth>24</depth>
+<url>/web/file/largeIco.png</url>
+</icon>
+</iconList>
+<serviceList>
+<service>
+<serviceType>urn:schemas-upnp-org:service:ConnectionManager:1</serviceType>
+<serviceId>urn:upnp-org:serviceId:ConnectionManager</serviceId>
+<SCPDURL>/aw/MediaServer_ConnectionManager/scpd.xml</SCPDURL>
+<controlURL>/aw/MediaServer_ConnectionManager/control</controlURL>
+<eventSubURL>/aw/MediaServer_ConnectionManager/event</eventSubURL>
+</service>
+<service>
+<serviceType>urn:schemas-upnp-org:service:ContentDirectory:1</serviceType>
+<serviceId>urn:upnp-org:serviceId:ContentDirectory</serviceId>
+<SCPDURL>/aw/MediaServer_ContentDirectory/scpd.xml</SCPDURL>
+<controlURL>/aw/MediaServer_ContentDirectory/control</controlURL>
+<eventSubURL>/aw/MediaServer_ContentDirectory/event</eventSubURL>
+</service>
+<service>
+<serviceType>urn:schemas-awox-com:service:X_ServiceManager:1</serviceType>
+<serviceId>urn:upnp-org:serviceId:X_ServiceManager</serviceId>
+<SCPDURL>/aw/MediaServer_X_ServiceManager/scpd.xml</SCPDURL>
+<controlURL>/aw/MediaServer_X_ServiceManager/control</controlURL>
+<eventSubURL>/aw/MediaServer_X_ServiceManager/event</eventSubURL>
+</service>
+</serviceList>
+</device>
+</root>
