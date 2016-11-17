@@ -1,7 +1,7 @@
 {
+  "id": "http://openinterconnect.org/iotdatamodels/schemas/oic.r.upnp.list.json#",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description" : "Copyright (c) 2016 Open Connectivity Foundation, Inc. All rights reserved.",
-  "id": "http://openinterconnect.org/iotdatamodels/schemas/oic.r.upnp.list.json#",
   "title": "UPnP Device List",
   "definitions": {
     "oic.r.upnp.list": {
@@ -9,7 +9,7 @@
         "upnpDeviceList": {
           "type": "array",
           "description": "Specifies the Array of UPnP Devices",
-          "readOnly": true,
+          "minItems": 1,
           "items": {
             "oneOf": [
               { "$ref": "oic.r.upnp.device.json#" }

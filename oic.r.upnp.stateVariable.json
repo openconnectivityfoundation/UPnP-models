@@ -28,7 +28,7 @@
             "allowedValueList": {
               "type": "array",
               "description": "Recommended, Array of State Variable Allowed Value",
-              "readOnly": true,
+              "minItems": 0,
               "items": {
                 "allowedValue": "string",
                 "readOnly": true,
