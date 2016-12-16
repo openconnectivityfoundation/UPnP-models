@@ -16,7 +16,7 @@ traits:
   - interface:
       queryParameters:
         if:
-          enum: ["oic.if.rw","oic.if.baseline"]
+          enum: ["oic.if.baseline"]
 
 /upnpServiceResURI:
   description: |
@@ -37,47 +37,40 @@ traits:
             schema: upnpService
             example: |
               {
-                "rt": ["oic.r.upnp.service"],
+                "rt": ["oic.r.upnp.service", "oic.wk.col"],
+                "if": ["oic.if.baseline"],
+                "ins": "uuid:UUID",
                 "id": "/oic/upnp/service/uuid:UUID",
                 "serviceType": "service_type",
                 "serviceId": "service_id",
                 "SCPDURL": "scpd_url_string",
                 "controlURL": "control_url_string",
                 "eventSubURL": "event_sub_url_string",
-                "actionList": [
-                  {
-                    "actionName": "action_name_1st"
-                  },
-                  {
-                    "actionName": "action_name_nth"
-                  }
-                ],
-                "serviceStateTables": [
-                  {
-                    "name": "name_1st",
-                    "dataType": "dataType_1st",
-                    "defaultValue": "defaultValue_1st",
-                    "allowedValueList": [
-                      {
-                        "allowedValue": "1st_allowedValue_1st"
-                      },
-                      {
-                        "allowedValue": "1st_allowedValue_nth"
-                      }
-                      ]
+                "links":
+                  [
+                    {
+                      "href": "/stateVariable-name_1st",
+                      "ins": "uuid:UUID",
+                      "rt": ["oic.r.upnp.stateVariable"],
+                      "if": ["oic.if.baseline"]
                     },
                     {
-                      "name": "name_nth",
-                      "dataType": "dataType_nth",
-                      "defaultValue": "defaultValue_nth",
-                      "allowedValueList": [
-                        {
-                          "allowedValue": "nth_allowedValue_1st"
-                        },
-                        {
-                          "allowedValue": "nth_allowedValue_nth"
-                        }
-                      ]
+                      "href": "/stateVariable-name_nth",
+                      "ins": "uuid:UUID",
+                      "rt": ["oic.r.upnp.stateVariable"],
+                      "if": ["oic.if.baseline"]
+                    },
+                    {
+                      "href": "/action-name_1st",
+                      "ins": "uuid:UUID",
+                      "rt": ["oic.r.upnp.action"],
+                      "if": ["oic.if.baseline"]
+                    },
+                    {
+                      "href": "/action-name_nth",
+                      "ins": "uuid:UUID",
+                      "rt": ["oic.r.upnp.action"],
+                      "if": ["oic.if.baseline"]
                     }
                   ]
                 }

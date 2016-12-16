@@ -39,6 +39,7 @@ traits:
               {
                 "rt": ["oic.r.upnp.device", "oic.wk.col"],
                 "if": ["oic.if.baseline"],
+                "ins": "uuid:UUID",
                 "id": "/oic/upnp/device/uuid:UUID",
                 "deviceType": "device_type",
                 "friendlyName": "friendly_name",
@@ -57,6 +58,7 @@ traits:
                       "sizes": ["48x48"],
                       "type": "image/png",
                       "rel": "icon",
+                      "ins": "uuid:UUID",
                       "rt": ["oic.r.icon"],
                       "if": ["oic.if.r"]
                     },
@@ -65,12 +67,20 @@ traits:
                       "sizes": ["192x192"],
                       "type": "image/png",
                       "rel": "icon",
+                      "ins": "uuid:UUID",
                       "rt": ["oic.r.icon"],
                       "if": ["oic.if.r"]
                     },
                     {
-                      "href": "/render",
-                      "rt": ["oic.r.upnpservice", "oic.r.mediarenderer"],
+                      "href": "/service-name_1st",
+                      "ins": "uuid:UUID",
+                      "rt": ["oic.r.upnp.service"],
+                      "if": ["oic.if.baseline"]
+                    },
+                    {
+                      "href": "/service-name_nth",
+                      "ins": "uuid:UUID",
+                      "rt": ["oic.r.upnp.service"],
                       "if": ["oic.if.baseline"]
                     }
                   ]

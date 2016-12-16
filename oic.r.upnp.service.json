@@ -1,9 +1,31 @@
 {
-  "id": "http://openinterconnect.org/iotdatamodels/schemas/oic.r.upnp.service.json#",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description" : "Copyright (c) 2016 Open Connectivity Foundation, Inc. All rights reserved.",
   "title": "UPnP Service",
   "definitions": {
+    "actionLink": {
+      "type": "object",
+      "properties": {
+        "rt": { "default": ["oic.r.upnp.action"] },
+        "if": { "default": ["oic.if.r", "oic.if.baseline"]}
+      }
+    },
+    "serviceStateTableLink": {
+      "type": "object",
+      "properties": {
+        "rt": { "default": ["oic.r.upnp.stateVariable"] },
+        "if": { "default": ["oic.if.r", "oic.if.baseline"]}
+      }
+    },
+    "upnpServiceLinks": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "#/definitions/actionLink" },
+          { "$ref": "#/definitions/serviceStateTableLink" }
+        ]
+      }
+    },
     "oic.r.upnp.service": {
       "properties": {
         "serviceType": {
@@ -30,25 +52,8 @@
           "type": "string",
           "description": "Specifies the URL for eventing"
         },
-        "actionList": {
-          "type": "array",
-          "description": "Specifies the Array of Actions",
-          "minItems": 0,
-          "items": {
-            "oneOf": [
-              { "$ref": "oic.r.upnp.action.json#" }
-            ]
-          }
-        },
-        "serviceStateTables": {
-          "type": "array",
-          "description": "Specifies the Array of State Variables",
-          "minItems": 0,
-          "items": {
-            "oneOf": [
-              { "$ref": "oic.r.upnp.stateVariable.json#" }
-            ]
-          }
+        "links": {
+          "$ref": "#/definitions/upnpServiceLinks"
         }
       }
     }
@@ -59,5 +64,5 @@
     {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
     {"$ref": "#/definitions/oic.r.upnp.service"}
   ],
-  "required": ["serviceType","serviceId","SCPDURL","controlURL","eventSubURL","actionList","serviceStateTables"]
+  "required": ["serviceType","serviceId","SCPDURL","controlURL","eventSubURL","links"]
 }

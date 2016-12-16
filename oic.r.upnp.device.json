@@ -13,7 +13,7 @@
     "serviceLink": {
       "type": "object",
       "properties": {
-        "rt": { "default": ["oic.r.upnpservice"] },
+        "rt": { "default": ["oic.r.upnp.service"] },
         "if": { "default": ["oic.if.r", "oic.if.baseline"]}
       }
     },
