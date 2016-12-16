@@ -1,9 +1,31 @@
 {
-  "id": "http://openinterconnect.org/iotdatamodels/schemas/oic.r.upnp.device.json#",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description" : "Copyright (c) 2016 Open Connectivity Foundation, Inc. All rights reserved.",
   "title": "UPnP Device",
   "definitions": {
+    "iconLink": {
+      "type": "object",
+      "properties": {
+        "rt": { "default": ["oic.r.icon"] },
+        "if": { "default": ["oic.if.r"]}
+      }
+    },
+    "serviceLink": {
+      "type": "object",
+      "properties": {
+        "rt": { "default": ["oic.r.upnpservice"] },
+        "if": { "default": ["oic.if.r", "oic.if.baseline"]}
+      }
+    },
+    "upnpDeviceLinks": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "#/definitions/iconLink" },
+          { "$ref": "#/definitions/serviceLink" }
+        ]
+      }
+    },
     "oic.r.upnp.device": {
       "properties": {
         "deviceType": {
@@ -61,34 +83,17 @@
           "readOnly": true,
           "description": "Allowed, Specifies the Universal Product Code"
         },
-        "iconList": {
-          "type": "array",
-          "description": "Specifies the Array of Icons",
-          "minItems": 0,
-          "items": {
-            "oneOf": [
-              { "$ref": "oic.r.icon.json#" }
-            ]
-          }
-        },
-        "serviceList": {
-          "type": "array",
-          "description": "Specifies the Array of Services",
-          "minItems": 0,
-          "items": {
-            "oneOf": [
-              { "$ref": "oic.r.upnp.service.json#" }
-            ]
-          }
+        "links": {
+          "$ref": "#/definitions/upnpDeviceLinks"
         }
+      }
     }
-  }
-},
+  },
   "type": "object",
   "allOf": [
     {"$ref": "oic.core.json#/definitions/oic.core"},
     {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
     {"$ref": "#/definitions/oic.r.upnp.device"}
   ],
-  "required": ["deviceType","friendlyName","manufacturer","modelName","UDN","iconList","serviceList"]
+  "required": ["deviceType","friendlyName","manufacturer","modelName","UDN","links"]
 }
