@@ -19,22 +19,21 @@ rem UPnP Resources
 copy %UPnPModels%\upnpDevice.raml  .
 %cmd% -raml upnpDevice.raml -resource /upnpDeviceResURI -docx %UPnPTemplateDoc%
 
-copy %UPnPModels%\icon.raml  .
-%cmd% -raml icon.raml -resource /IconResURI -docx upnpDevice.raml.docx
-
 copy %UPnPModels%\upnpService.raml  .
-%cmd% -raml upnpService.raml -resource /upnpServiceResURI -docx icon.raml.docx
-
-copy %UPnPModels%\upnpStateVariable.raml  .
-%cmd% -raml upnpStateVariable.raml -resource /upnpStateVariableResURI -docx upnpService.raml.docx
+%cmd% -raml upnpService.raml -resource /upnpServiceResURI -docx upnpDevice.raml.docx
 
 copy %UPnPModels%\upnpAction.raml  .
-%cmd% -raml upnpAction.raml -resource /upnpActionResURI -docx upnpStateVariable.raml.docx
+%cmd% -raml upnpAction.raml -resource /upnpActionResURI -docx upnpService.raml.docx
 
-copy %UPnPModels%\generic.raml  .
-%cmd% -raml generic.raml -resource /GenericResURI -docx upnpAction.raml.docx
-copy  generic.raml.docx %TemplateDir%\%UPnPTemplateDoc%_generated.docx
+copy %UPnPModels%\upnpStateVariable.raml  .
+%cmd% -raml upnpStateVariable.raml -resource /upnpStateVariableResURI -docx upnpAction.raml.docx
 
-rem %cmd% -raml upnpList.raml -resource /upnpDeviceListResURI -docx upnpStateVariable.raml.docx
+copy %UPnPModels%\upnpGeneric.raml  .
+%cmd% -raml upnpGeneric.raml -resource /upnpGenericResURI -docx upnpStateVariable.raml.docx
+
+copy %UPnPModels%\icon.raml  .
+%cmd% -raml icon.raml -resource /IconResURI -docx upnpGeneric.raml.docx
+
+copy  icon.raml.docx %TemplateDir%\%UPnPTemplateDoc%_generated.docx
 
 del -f *.raml *.docx

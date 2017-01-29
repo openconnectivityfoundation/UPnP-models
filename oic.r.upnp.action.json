@@ -20,7 +20,7 @@
         "minItems": 0,
 			  "items": {
 				"oneOf": [
-				  { "$ref": "oic.r.generic.json#" }
+				  { "$ref": "oic.r.upnp.generic.json#" }
 				]
 			  }
 			},
@@ -30,7 +30,7 @@
         "minItems": 0,
 			  "items": {
 				"oneOf": [
-				  { "$ref": "oic.r.generic.json#" }
+				  { "$ref": "oic.r.upnp.generic.json#" }
 				]
 			  }
             }
