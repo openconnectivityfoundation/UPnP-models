@@ -1,24 +1,24 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description" : "Copyright (c) 2016 Open Connectivity Foundation, Inc. All rights reserved.",
-  "title": "UPnP Generic Input/Output Arguements",
+  "title": "UPnP Generic Input/Output Arguments",
   "definitions": {
     "oic.r.upnp.generic": {
       "properties": {
         "genName": {
           "type": "string",
           "readOnly": true,
-          "description": "UPnP Generic Arguement Name"
+          "description": "UPnP Generic Argument Name"
         },
         "genType": {
           "type": "string",
           "readOnly": true,
-          "description": "UPnP Generic Arguement Type"
+          "description": "UPnP Generic Argument Type"
         },
         "genValue": {
           "type": "string",
           "readOnly": true,
-          "description": "UPnP Generic Arguement Value"
+          "description": "UPnP Generic Argument Value"
         }
       }
     }
