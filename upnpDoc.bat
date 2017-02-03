@@ -17,8 +17,8 @@ rem make sure that correct template is used
 copy %TemplateDir%\%UPnPTemplateDoc%  .\%UPnPTemplateDoc%
 
 rem Copy all raml and json files
-copy %UPnPModelsDirDir%\*.raml  .
 copy %UPnPModelsDirDir%\*.json  .
+copy %UPnPModelsDirDir%\*.raml  .
 
 rem UPnP Resources 
 rem copy %UPnPModelsDir%\upnpDevice.raml  .
@@ -41,4 +41,4 @@ rem copy %UPnPModelsDir%\icon.raml  .
 
 copy  icon.raml.docx %TemplateDir%\%UPnPTemplateDoc%_generated.docx
 
-del -f *.raml *.docx
+del -f *.json *.raml *.docx
