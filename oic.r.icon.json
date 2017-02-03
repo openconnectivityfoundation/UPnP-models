@@ -10,13 +10,22 @@
           "readOnly": true,
           "description": "Specifies the format of the MIME Type"
         },
-        "sizes": {
-          "type": "string",
+        "width": {
+          "type": "integer",
+          "minimum": 1,
           "readOnly": true,
-          "description": "Specifies the width x height pixels"
+          "description": "Specifies the width in pixels"
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1,
+          "readOnly": true,
+          "description": "Specifies the height in pixels"
         },
         "media": {
           "type": "string",
+          "maxLength": 256,
+          "format" : "uri",
           "readOnly": true,
           "description": "Specifies the media URL to icon"
         }
@@ -29,5 +38,5 @@
     {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
     {"$ref": "#/definitions/oic.r.icon"}
   ],
-  "required": ["mimeType","sizes","media"]
+  "required": ["mimeType","width","heights","media"]
 }
