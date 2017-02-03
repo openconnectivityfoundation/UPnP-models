@@ -38,5 +38,5 @@
     {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
     {"$ref": "#/definitions/oic.r.icon"}
   ],
-  "required": ["mimeType","width","heights","media"]
+  "required": ["mimeType","width","height","media"]
 }
