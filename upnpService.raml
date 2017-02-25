@@ -20,10 +20,9 @@ traits:
 
 /upnpServiceResURI:
   description: |
-    This resource provides the list of upnp service available on the device.
-    The services are an array of upnpService(s) as separately defined.
-    The basic resource type oic.r.device is not able provide the actionList which are provide here in this device.
-
+    This resource provides the specific information associated with each the UPnP Service which is associated to an UPnP Device.
+    In addition, includes the link list of UPnP Action and UPnP State Variable resources associated to the UPnP Service.
+	
   displayName: UPnP Service
   is: [ interface ]
 
