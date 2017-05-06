@@ -1,5 +1,5 @@
 # Open Interconnect Consortium, Inc. | UPnP Data Models
-© 2016 Open Interconnect Consortium, Inc. All rights reserved.
+© 2017 Open Interconnect Consortium, Inc. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
