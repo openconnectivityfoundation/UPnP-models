@@ -37,3 +37,18 @@ traits:
               "genType": "generic_type",
               "genValue": "generic_value"
               }
+
+  post:
+    responses:
+      200:
+        body:
+          application/json:
+            schema: upnpGeneric
+            example: |
+              {
+              "rt": ["oic.r.upnp.generic"],
+              "id": "unique_example_id",
+              "genName": "generic_name",
+              "genType": "generic_type",
+              "genValue": "generic_value"
+              }

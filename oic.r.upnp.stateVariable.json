@@ -1,6 +1,7 @@
 {
+  "id": "oic.r.upnp.stateVariable.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "description" : "Copyright (c) 2016 Open Connectivity Foundation, Inc. All rights reserved.",
+  "description" : "Copyright (c) 2017 Open Connectivity Foundation, Inc. All rights reserved.",
   "title": "UPnP State Variable",
   "definitions": {
     "oic.r.upnp.stateVariable": {
@@ -28,10 +29,16 @@
               "type": "array",
               "description": "Recommended, Array of State Variable Allowed Value",
               "minItems": 0,
+              "readOnly": true,
               "items": {
-                "allowedValue": "string",
-                "readOnly": true,
-                "description": "Required, State Variable Allowed Value"
+                "type": "object",
+                "properties": {
+                  "allowedValue": {
+                    "type": "string",
+                    "readOnly": true,
+                    "description": "Required, State Variable Allowed Value"
+                  }
+                }
               }
             }
           }

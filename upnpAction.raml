@@ -24,7 +24,7 @@ traits:
   displayName: UPnP Action
   is: [ interface ]
 
-  post:
+  get:
     description: |
       Changes the status of the action(s).
       Allows changes of the sourceName and the status.
@@ -72,4 +72,41 @@ traits:
               "genValue": "arg_value_nth"
               }
               ]
+              }
+  post:
+    description: |
+      Changes the status of the action(s).
+      Allows changes of the sourceName and the status.
+    body:
+      application/json:
+        schema: upnpAction
+        example: |
+          {
+          "rt": ["oic.r.upnp.action"],
+          "ins": "uuid:UUID",
+          "id": "/oic/upnp/service_name/uuid:UUID",
+          "actionName": "action_name",
+          "inputArgs": [
+          {
+          "genName": "arg_name_1st",
+          "genType": "arg_type_1st",
+          "genValue": "arg_value_1st"
+          },
+          {
+          "genName": "arg_name_nth",
+          "genType": "arg_type_nth",
+          "genValue": "arg_value_nth"
+          }
+          ]
+          }
+    responses:
+      200:
+        body:
+          application/json:
+            schema: upnpAction
+            example: |
+              {
+              "rt": ["oic.r.upnp.action"],
+              "id": "unique_example_id",
+              "actionName": "action_name"
               }
