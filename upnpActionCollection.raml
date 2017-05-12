@@ -1,0 +1,76 @@
+#%RAML 0.8
+title: UPnP Action Collection
+version: v1-20170401
+documentation:
+        - title: OCF Copyright
+          content: Copyright (c) 2017 Open Connectivity Foundation, Inc. All rights reserved.
+        - title: OCF License
+          content: !include LICENSE.md
+        - title: OCF Disclaimer
+          content: !include DISCLAIMER.md
+schemas:
+  - upnpActionCollection:  !include oic.r.upnp.actionCollection.json
+  - upnpActionCollection-ll:  !include oic.r.upnp.actionCollection-ll.json
+
+traits:
+    - interface-baseline:
+        queryParameters:
+          if:
+            enum: ["oic.if.baseline"]
+
+    - interface-ll:
+        queryParameters:
+          if:
+              enum: ["oic.if.ll"]
+
+/upnpActionCollectionBaselineResURI:
+  description: |
+    This resource provides a collection of UPnP Actions using baseline interface (oic.if.baseline).
+    The resource is a collection of instances of oic.r.upnp.action detailing the individual UPnP Actions
+
+  displayName: UPnP Action Collection
+  is: [ interface-baseline ] # valid for all methods
+
+  get:
+    description: |
+      Retrieves the current collection of UPnP Actions and information.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: upnpActionCollection
+            example: |
+              {
+                "rt":    ["oic.r.upnp.actionCollection","oic.wk.col"],
+                "id":    "unique_example_id",
+                "links": [
+                  {"href": "/upnpAction1ResURI", "rt": ["oic.r.upnp.action"], "if": ["oic.if.r","oic.if.baseline"]},
+                  {"href": "/upnpAction2ResURI", "rt": ["oic.r.upnp.action"], "if": ["oic.if.rw","oic.if.baseline"]},
+                  {"href": "/upnpAction3ResURI", "rt": ["oic.r.upnp.action"], "if": ["oic.if.r","oic.if.baseline"]},
+                  {"href": "/upnpAction4ResURI", "rt": ["oic.r.upnp.action"], "if": ["oic.if.rw","oic.if.baseline"]}
+                ]
+              }
+
+/upnpActionCollectionLLResURI:
+  description: |
+    This resource provides a collection of UPnP Actions using link list interface (oic.if.ll).
+    The resource is a collection of instances of oic.r.upnp.action detailing the individual UPnP Actions
+
+  displayName: UPnP Action Collection
+  is: [ interface-ll ] # valid for all methods
+
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            schema: upnpActionCollection-ll
+            example: |
+              {
+                "links": [
+                  {"href": "/upnpAction1ResURI", "rt": ["oic.r.upnp.action"], "if": ["oic.if.r"]},
+                  {"href": "/upnpAction2ResURI", "rt": ["oic.r.upnp.action"], "if": ["oic.if.rw"]},
+                  {"href": "/upnpAction3ResURI", "rt": ["oic.r.upnp.action"], "if": ["oic.if.r"]},
+                  {"href": "/upnpAction4ResURI", "rt": ["oic.r.upnp.action"], "if": ["oic.if.rw"]}
+                ]
+              }
