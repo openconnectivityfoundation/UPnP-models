@@ -17,7 +17,7 @@
             },
 			"inputArgs": {
 			  "type": "array",
-			  "description": "Optioinal, Specifies the Array of Input Arguements",
+			  "description": "Optional, Specifies the Array of Input Arguments",
         "minItems": 0,
 			  "items": {
 				"oneOf": [
@@ -27,7 +27,7 @@
 			},
 			"outputArgs":  {
 			  "type": "array",
-			  "description": "Optioinal, Specifies the Array of Output Arguements",
+			  "description": "Optional, Specifies the Array of Output Arguments",
         "minItems": 0,
 			  "items": {
 				"oneOf": [
