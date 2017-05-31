@@ -26,9 +26,9 @@ traits:
 /upnpDeviceCollectionBaselineResURI:
   description: |
     This resource provides a collection of UPnP Devices using baseline interface (oic.if.baseline).
-    The resource is a collection of instances of oic.r.upnp.device detailing the individual UPnP Devices
+    The resource is a collection of instances of oic.d.light and oic.r.upnp.device detailing the individual UPnP Devices
 
-  displayName: UPnP Device Collection
+  displayName: UPnP Device Collection - Baseline Interface
   is: [ interface-baseline ] # valid for all methods
 
   get:
@@ -44,19 +44,19 @@ traits:
                 "rt":    ["oic.r.upnp.deviceCollection","oic.wk.col"],
                 "id":    "unique_example_id",
                 "links": [
-                  {"href": "/upnpDevice1ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r","oic.if.baseline"]},
-                  {"href": "/upnpDevice2ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r","oic.if.baseline"]},
-                  {"href": "/upnpDevice3ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r","oic.if.baseline"]},
-                  {"href": "/upnpDevice4ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r","oic.if.baseline"]}
+                  {"href": "/upnpLight1ResURI", "rt": ["oic.d.light"], "if": ["oic.if.r","oic.if.baseline"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]},
+                  {"href": "/upnpLight2ResURI", "rt": ["oic.d.light"], "if": ["oic.if.r","oic.if.baseline"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]},
+                  {"href": "/upnpDevice1ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r","oic.if.baseline"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]},
+                  {"href": "/upnpDevice2ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r","oic.if.baseline"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]}
                 ]
               }
 
 /upnpDeviceCollectionLLResURI:
   description: |
     This resource provides a collection of UPnP Devices using link list interface (oic.if.ll).
-    The resource is a collection of instances of oic.r.upnp.device detailing the individual UPnP Devices
+    The resource is a collection of instances of oic.d.light and oic.r.upnp.device detailing the individual UPnP Devices
 
-  displayName: UPnP Device Collection
+  displayName: UPnP Device Collection - Link List Interface
   is: [ interface-ll ] # valid for all methods
 
   get:
@@ -68,9 +68,9 @@ traits:
             example: |
               {
                 "links": [
-                  {"href": "/upnpDevice1ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r"]},
-                  {"href": "/upnpDevice2ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r"]},
-                  {"href": "/upnpDevice3ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r"]},
-                  {"href": "/upnpDevice4ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r"]}
+                  {"href": "/upnpLight1ResURI", "rt": ["oic.d.light"], "if": ["oic.if.r"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]},
+                  {"href": "/upnpLight2ResURI", "rt": ["oic.d.light"], "if": ["oic.if.r"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]},
+                  {"href": "/upnpDevice1ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]},
+                  {"href": "/upnpDevice2ResURI", "rt": ["oic.r.upnp.device"], "if": ["oic.if.r"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]}
                 ]
               }

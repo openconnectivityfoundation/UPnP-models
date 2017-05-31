@@ -26,9 +26,9 @@
             "maxItems": 2,
             "uniqueItems": true,
             "items": {
-              "oneOf": [
+              "anyOf": [
                 {
-                  "enum": ["oic.r.upnp.device","oic.r.value.conditional"]
+                  "enum": ["oic.r.upnp.device","oic.d.light"]
                 },
                 {
                   "enum": ["oic.r.upnp.device"]
