@@ -64,7 +64,7 @@
         "deviceType": {
           "type": "string",
           "readOnly": true,
-          "description": "Specifies the type of the UPnP Device Type"
+          "description": "Specifies the type of the UPnP Device"
         },
         "friendlyName": {
           "type": "string",
