@@ -20,6 +20,7 @@ traits:
 /upnpActionResURI:
   description: |
     This resource provides the action along with inputArgs and outputArgs associated with the UPnP Service.
+    upnpActionResURI is of the this format /upnp/service_name/UPnP_UUID/action_name.
 
   displayName: UPnP Action
   is: [ interface ]
@@ -34,8 +35,7 @@ traits:
         example: |
           {
           "rt": ["oic.r.upnp.action"],
-          "ins": "uuid:UUID",
-          "id": "/oic/upnp/service_name/uuid:UUID",
+          "id": "unique_example_id",
           "actionName": "action_name",
           "inputArgs": [
           {
@@ -83,8 +83,7 @@ traits:
         example: |
           {
           "rt": ["oic.r.upnp.action"],
-          "ins": "uuid:UUID",
-          "id": "/oic/upnp/service_name/uuid:UUID",
+          "id": "unique_example_id",
           "actionName": "action_name",
           "inputArgs": [
           {

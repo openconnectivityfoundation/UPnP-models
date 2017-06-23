@@ -71,17 +71,17 @@
           "readOnly": true,
           "description": "Specifies the type of the UPnP Service ID"
         },
-        "SCPDURL": {
+        "scpdUrl": {
           "type": "string",
           "readOnly": true,
           "description": "Specifies the URL to service description"
         },
-        "controlURL": {
+        "controlUrl": {
           "type": "string",
           "readOnly": true,
           "description": "Specifies the URL for control"
         },
-        "eventSubURL": {
+        "eventSubUrl": {
           "type": "string",
           "description": "Specifies the URL for eventing"
         },
@@ -97,5 +97,5 @@
     {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
     {"$ref": "#/definitions/oic.r.upnp.service"}
   ],
-  "required": ["serviceType","serviceId","SCPDURL","controlURL","eventSubURL","links"]
+  "required": ["serviceType","serviceId","scpdUrl","controlUrl","eventSubUrl","links"]
 }

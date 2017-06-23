@@ -76,7 +76,7 @@
           "readOnly": true,
           "description": "Specifies the Manufacturer name"
         },
-        "manufacturerURL": {
+        "manufacturerUrl": {
           "type": "string",
           "readOnly": true,
           "description": "Allowed, Specifies the URL-Website to manufacturer of the device"
@@ -96,22 +96,27 @@
           "readOnly": true,
           "description": "Recommended, Specifies the Model number"
         },
-        "modelURL": {
+        "modelUrl": {
           "type": "string",
           "readOnly": true,
           "description": "Allowed, Specifies the URL to model site"
+        },
+        "presentationUrl": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Allowed, Specifies the URL for presentation"
         },
         "serialNumber": {
           "type": "string",
           "readOnly": true,
           "description": "Recommended, Specifies the Manufacturer's serial number"
         },
-        "UDN": {
+        "udn": {
           "type": "string",
           "readOnly": true,
           "description": "Specifies the uuid:UUID - Universally Unique IDentifier"
         },
-        "UPC": {
+        "upc": {
           "type": "string",
           "readOnly": true,
           "description": "Allowed, Specifies the Universal Product Code"
@@ -128,5 +133,5 @@
     {"$ref": "oic.baseResource.json#/definitions/oic.r.baseresource"},
     {"$ref": "#/definitions/oic.r.upnp.device"}
   ],
-  "required": ["deviceType","friendlyName","manufacturer","modelName","UDN","links"]
+  "required": ["deviceType","friendlyName","manufacturer","modelName","udn","links"]
 }
