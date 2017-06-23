@@ -19,9 +19,11 @@ traits:
 
 /upnpServiceResURI:
   description: |
-    This resource provides the specific information associated with each the UPnP Service which is associated to an UPnP Device.
-    In addition, includes the link list of UPnP Action and UPnP State Variable resources associated to the UPnP Service.
-    upnpServiceResURI is of the this format /upnp/service_name/UPnP_UUID.
+    This resource provides the specific information associated with each the UPnP Service which
+    is associated to an UPnP Device. In addition, includes the link list of UPnP Action and UPnP
+    State Variable resources associated to the UPnP Service. It is high recommended to include the UPnP_UUID as part of the
+    upnpServiceResURI otherwise the client will need to manage the mapping to the UPnP Devices.
+    /upnp/service_name/UPnP_UUID is the recommended format for upnpServiceResURI.
 
   displayName: UPnP Service
   is: [ interface ]

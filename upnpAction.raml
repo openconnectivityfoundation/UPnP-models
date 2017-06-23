@@ -19,8 +19,10 @@ traits:
 
 /upnpActionResURI:
   description: |
-    This resource provides the action along with inputArgs and outputArgs associated with the UPnP Service.
-    upnpActionResURI is of the this format /upnp/service_name/UPnP_UUID/action_name.
+    This resource provides the action along with inputArgs and outputArgs associated with the UPnP
+    Service. It is high recommended to include the service_name and UPnP_UUID as part of the
+    upnpActionResURI otherwise the client will need to manage the mapping to the UPnP Devices.
+    /upnp/service_name/UPnP_UUID/action_name is the recommended format for upnpActionResURI.
 
   displayName: UPnP Action
   is: [ interface ]

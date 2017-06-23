@@ -18,8 +18,11 @@ traits:
 
 /upnpStateVariableResURI:
   description: |
-    This resource describes information associated an UPnP State Variable.
-    upnpStateVariableResURI is of the this format /upnp/service_name/UPnP_UUID/state_variable_name.
+    This resource describes information associated an UPnP State Variable. It is
+    high recommended to include the service_name and UPnP_UUID as part of the
+    upnpStateVariableResURI otherwise the client will need to manage the mapping
+    to the UPnP Devices. /upnp/service_name/UPnP_UUID/state_variable_name is the
+    recommended format for upnpStateVariableResURI.
 
   displayName: UPnP State Variable
   is: [ interface ] # valid for all methods

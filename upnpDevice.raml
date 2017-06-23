@@ -20,7 +20,10 @@ traits:
 /upnpDeviceResURI:
   description: |
     This resource provides the specific information associated with each the UPnP Device.
-    In addition, includes the link list of UPnP Service and Icon resources associated to the UPnP Device.
+    In addition, includes the link list of UPnP Service and Icon resources associated to
+    the UPnP Device. It is high recommended to include the UPnP_UUID as part of the
+    upnpDeviceResURI otherwise the client will need to manage the mapping to the UPnP Devices.
+    /upnp/device_name/UPnP_UUID is the recommended format for upnpDeviceResURI.
 
   displayName: UPnP Device
   is: [ interface ]
@@ -37,53 +40,49 @@ traits:
               {
                 "rt": ["oic.r.upnp.device", "oic.wk.col"],
                 "if": ["oic.if.baseline"],
-                "ins": "uuid:UUID",
-                "id": "/oic/upnp/device/uuid:UUID",
+                "id": "unique_example_id",
                 "deviceType": "device_type",
                 "friendlyName": "friendly_name",
                 "manufacturer": "manufacturer_name",
                 "modelDescription": "model_description",
                 "modelName": "model_name",
                 "modelNumber": "model_number",
-                "modelURL": "model_url",
+                "modelUrl": "model_url",
+                "presentationUrl": "presentation_url",
                 "serialNumber": "serial_number",
-                "UDN": "uuid:UUID",
-                "UPC": "Universal_Product_Code",
+                "udn": "uuid:UPnP_UUID",
+                "upc": "Universal_Product_Code",
                 "links":
                   [
                     {
-                      "href": "/icon-web",
+                      "href": "/icon-webResUri",
                       "mimetype": "image/png",
                       "width": 256,
                       "height": 256,
                       "media": "http://findbetter.ru/public/uploads/1481662800/2043.png",
                       "rel": "icon",
-                      "ins": "uuid:UUID",
                       "rt": ["oic.r.icon"],
                       "if": ["oic.if.r"]
                     },
                     {
-                      "href": "/icon-local",
+                      "href": "/icon-localResUri",
                       "mimetype": "image/png",
                       "width": 64,
                       "height": 64,
                       "media": "sample.png",
                       "rel": "icon",
-                      "ins": "uuid:UUID",
                       "rt": ["oic.r.icon"],
                       "if": ["oic.if.r"]
                     },
                     {
-                      "href": "/service-name_1st",
-                      "ins": "uuid:UUID",
+                      "href": "/upnp/service-name_1st/UPnP_UUID",
                       "rt": ["oic.r.upnp.service"],
-                      "if": ["oic.if.baseline"]
+                      "if": ["oic.if.r", "oic.if.baseline"]
                     },
                     {
-                      "href": "/service-name_nth",
-                      "ins": "uuid:UUID",
+                      "href": "/upnp/service-name_nth/UPnP_UUID",
                       "rt": ["oic.r.upnp.service"],
-                      "if": ["oic.if.baseline"]
+                      "if": ["oic.if.r", "oic.if.baseline"]
                     }
                   ]
               }
