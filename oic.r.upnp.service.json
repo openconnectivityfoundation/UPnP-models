@@ -6,9 +6,11 @@
   "definitions": {
     "actionLink": {
       "type": "object",
+      "description": "List UPnP Action Resources along with rt, if, and default properties.",
       "properties": {
         "rt": {
           "type": "array",
+          "description": "Array of Action Resource Types. See schema for default values",
           "items" : {
               "type" : "string",
               "maxLength": 64
@@ -18,20 +20,23 @@
         },
         "if": {
           "type": "array",
+          "description": "Array of Interfaces. See schema for default values",
           "items": {
               "type" : "string",
-              "enum" : ["oic.if.baseline", "oic.if.ll", "oic.if.b", "oic.if.rw", "oic.if.r", "oic.if.a", "oic.if.s" ]
+              "enum" : ["oic.if.baseline", "oic.if.ll", "oic.if.b", "oic.if.r", "oic.if.rw" ]
             },
           "minItems": 1,
-          "default": ["oic.if.r", "oic.if.baseline"]
+          "default": ["oic.if.baseline", "oic.if.r"]
         }
       }
     },
     "serviceStateTableLink": {
       "type": "object",
+      "description": "List UPnP Service State Variable Resources along with rt, if, and default properties.",
       "properties": {
         "rt": {
           "type": "array",
+          "description": "Array of Resource Types. See schema for default values",
           "items" : {
               "type" : "string",
               "maxLength": 64
@@ -41,17 +46,19 @@
         },
         "if": {
           "type": "array",
+          "description": "Array of Interfaces. See schema for default values",
           "items": {
               "type" : "string",
-              "enum" : ["oic.if.baseline", "oic.if.ll", "oic.if.b", "oic.if.rw", "oic.if.r", "oic.if.a", "oic.if.s" ]
+              "enum" : ["oic.if.baseline", "oic.if.ll", "oic.if.b", "oic.if.r", "oic.if.rw" ]
             },
           "minItems": 1,
-          "default": ["oic.if.r", "oic.if.baseline"]
+          "default": ["oic.if.baseline", "oic.if.r" ]
         }
       }
     },
     "upnpServiceLinks": {
       "type": "array",
+      "description": "List of UPnP Action and UPnP Service State Table Resources",
       "items": {
         "anyOf": [
           { "$ref": "#/definitions/actionLink" },

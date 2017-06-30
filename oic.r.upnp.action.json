@@ -7,6 +7,7 @@
     "oic.r.upnp.action": {
       "action": {
         "type": "array",
+        "description": "Array of UPnP Action Resource Types. See schema.",
         "items": {
           "type": "object",
           "properties": {

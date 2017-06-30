@@ -6,9 +6,11 @@
   "definitions": {
     "iconLink": {
       "type": "object",
+      "description": "List of UPnP Icon Resources along with rt, if, and default properties.",
       "properties": {
         "rt": {
           "type": "array",
+          "description": "Array of Icon Resource Types. See schema for default values",
           "items" : {
               "type" : "string",
               "maxLength": 64
@@ -20,18 +22,20 @@
           "type": "array",
           "items": {
               "type" : "string",
-              "enum" : ["oic.if.baseline", "oic.if.ll", "oic.if.b", "oic.if.rw", "oic.if.r", "oic.if.a", "oic.if.s" ]
+              "enum" : ["oic.if.baseline", "oic.if.ll", "oic.if.b", "oic.if.r", "oic.if.rw" ]
             },
           "minItems": 1,
-          "default": ["oic.if.r"]
+          "default": ["oic.if.baseline", "oic.if.r"]
         }
       }
     },
     "serviceLink": {
       "type": "object",
+      "description": "List UPnP Service Resources along with rt, if, and default properties.",
       "properties": {
         "rt": {
           "type": "array",
+          "description": "Array of UPnP Service Resource Types. See schema for default values",
           "items" : {
               "type" : "string",
               "maxLength": 64
@@ -41,17 +45,19 @@
         },
         "if": {
           "type": "array",
+          "description": "Array of Interfaces. See schema for default values.",
           "items": {
               "type" : "string",
-              "enum" : ["oic.if.baseline", "oic.if.ll", "oic.if.b", "oic.if.rw", "oic.if.r", "oic.if.a", "oic.if.s" ]
+              "enum" : ["oic.if.baseline", "oic.if.ll", "oic.if.b", "oic.if.r", "oic.if.rw" ]
             },
           "minItems": 1,
-          "default": ["oic.if.r", "oic.if.baseline"]
+          "default": ["oic.if.baseline", "oic.if.r" ]
         }
       }
     },
     "upnpDeviceLinks": {
       "type": "array",
+      "description": "List of UPnP Icon and UPnP Service Resources. See schema for Value Types.",
       "items": {
         "anyOf": [
           { "$ref": "#/definitions/iconLink" },

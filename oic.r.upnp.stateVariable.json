@@ -7,6 +7,7 @@
     "oic.r.upnp.stateVariable": {
       "stateVariables": {
         "type": "array",
+        "description": "Array of UPnP State Variable Resource Types. See schema.",
         "items": {
           "type": "object",
           "properties": {
